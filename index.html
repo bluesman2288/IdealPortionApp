@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta name="author" content="Ekw">
+   <meta name="description" content="Food Searcher">
+   <title>My Ideal Portion</title>
+   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+     <script src="cordova-2.0.0.js"></script>
+   <script src="lib/jquery-1.8.3.js"></script>
+        <!--jQuery, linked from a CDN-->=
+   <script src="lib/highcharts.js"></script>
+
+   <script type="text/javascript" src="http://use.typekit.com/oya4cmx.js"></script>
+   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+<link rel="stylesheet" type="text/css" href="styles/style.css" />
+ <link rel="stylesheet" type="text/css" href="styles/custom.css" />
+
+
+</head>
+<body>
+<center>
+
+<div class="container">
+<div id="deviceProperties">
+
+</div>
+
+  <div id="form">
+   <section id="fetch">
+   <table width="80%">
+    	<tr>
+   	<td align='center'>
+    <header>
+      <h1>Find Food or Restaurants now</h1>
+   </header>
+   
+    	</td>
+   	</tr>
+   	
+   	<tr>
+   	<td align='center'>
+   	<input type="text" placeholder="Enter a food or restaurant" id="term" size= 30 onclick="this.placeholder='';clearResults();"/>
+   	</td>
+   	</tr>
+   
+   <tr>
+   	<td align='center'>
+   	<button id="search" class="classname">Find Food or Restaurants</button>
+   	</td>
+   	</tr>
+   	
+   	<tr>
+   	<td align='center'>
+   	 <div id="status">
+   </div>
+   	</td>
+   	</tr>
+   	
+   </table>
+      
+      
+   </section>
+   
+   <br>
+   </div>
+   <div id="food">
+   </div>
+    <div id="item">
+   </div>
+   
+   
+   <div id='chart1' style='height:315px; width:315px;'></div>
+  
+</div>
+</center>
+</body>
+</html>

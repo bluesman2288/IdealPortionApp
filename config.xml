@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id = "com.myidealportion.iportion"
+        version = "2.1.0">
+    <name>Ideal Portion</name>
+
+    <description>
+    
+        meals calorie tracker
+    </description>
+
+    <author href="http://myidealportion.com" email="support@myidealportion.com">
+        PhoneGap Team
+    </author>
+
+    <feature name="http://api.phonegap.com/1.0/device" />
+
+
+    <preference name="phonegap-version" value="2.1.0" />
+    <preference name="orientation" value="default" />
+    <preference name="target-device" value="handset" />
+    <preference name="fullscreen" value="false" />
+
+    <icon src=" icon.png" />
+    <icon src="icons/icon-57.png" gap:platform="ios" width="57" height="57" />
+    <icon src="icons/icon-72.png" gap:platform="ios" width="72" height="72" />
+
+</widget>

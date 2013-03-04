@@ -1,0 +1,64 @@
+<html>
+ <head>
+    <title>Calling Web Service from jQuery</title>
+    <script type="text/javascript" src="lib/jquery-1.8.3.js"></script>
+
+    <script type="text/javascript">
+    
+ 
+
+    function processResponse(respObj) {
+    //respObj is a JSON equivalent of SOAP Response XML (all namespaces are dropped)
+    //... do something with response
+    }
+    
+        $(document).ready(function () {
+            $("#btnCallWebService").click(function (event) {
+                var wsUrl = "http://localhost/myidealportion/pollserver.php?op=getCategory";
+
+                var soapRequest =
+'<?xml version="1.0" encoding="utf-8"?> \
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" \
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" \
+    xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"> \
+  <soap:Body> \
+    <getCategory xmlns="http://tempuri.org/"> \
+      <value>' + $("#txtName").val() + '</value> \
+      <sysId	>12312</sysId> \
+    </getCategory> \
+  </soap:Body> \
+</soap:Envelope>';
+
+                $.ajax({
+                    type: "POST",
+                    url: wsUrl,
+                    contentType: "text/xml",
+                    dataType: "xml",
+                    data: soapRequest,
+                    success: processSuccess,
+                    error: processError
+                });
+
+            });
+        });
+
+        function processSuccess(data, status, req) {
+           document.getElementById("response").innerHTML=data;
+        }
+
+        function processError(data, status, req) {
+            alert(req.responseText + " " + status);
+        }  
+
+    </script>
+</head>
+<body>
+    <h3>
+        Calling Web Services with jQuery/AJAX
+    </h3>
+    Enter your name:
+    <input id="txtName" type="text" />
+    <input id="btnCallWebService" value="Call web service" type="button" />
+    <div id="response" />
+</body>
+</html>
